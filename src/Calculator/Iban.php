@@ -23,7 +23,7 @@ class Iban
         return str_pad((string) $checksum, 2, '0', STR_PAD_LEFT);
     }
 
-    private static function alphaToNumberCallback(string $match): int
+    private static function alphaToNumberCallback(array $match): int
     {
         return self::alphaToNumber($match[0]);
     }

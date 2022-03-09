@@ -24,15 +24,11 @@ use Faker\Extension\VersionExtension;
  */
 class Generator
 {
-    protected $providers = [];
-    protected $formatters = [];
+    protected array $formatters = [];
 
-    private $container;
+    private ContainerInterface $container;
 
-    /**
-     * @var UniqueGenerator
-     */
-    private $uniqueGenerator;
+    private UniqueGenerator $uniqueGenerator;
 
     public function __construct(ContainerInterface $container = null)
     {
@@ -64,18 +60,6 @@ class Generator
         }
 
         return $extension;
-    }
-
-    public function addProvider($provider)
-    {
-        array_unshift($this->providers, $provider);
-
-        $this->formatters = [];
-    }
-
-    public function getProviders()
-    {
-        return $this->providers;
     }
 
     /**

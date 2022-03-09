@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Faker\Core;
 
-use Faker\Extension\DateTimeExtension;
 use Faker\Extension\GeneratorAwareExtension;
 use Faker\Extension\GeneratorAwareExtensionTrait;
 use Faker\Extension\Helper;
@@ -59,6 +58,6 @@ final class Version implements VersionExtension, GeneratorAwareExtension
         }
 
         // date syntax
-        return $this->generator->ext(DateTimeExtension::class)->date('YmdHis');
+        return $this->generator->ext(\Faker\Extension\DateTimeExtension::class)->date('YmdHis');
     }
 }

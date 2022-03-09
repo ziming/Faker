@@ -11,7 +11,7 @@ namespace Faker\Extension;
  *
  * @since 1.20.0
  */
-interface DateTimeExtension
+interface DateTimeExtension extends Extension
 {
     /**
      * Get a DateTime object between January 1, 1970, and `$until` (defaults to "now").
