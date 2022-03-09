@@ -12,19 +12,14 @@ namespace Faker\Calculator;
  */
 class Luhn
 {
-    /**
-     * @param string $number
-     *
-     * @return int
-     */
-    private static function checksum($number)
+    private static function checksum(string $number): int
     {
         $number = (string) $number;
         $length = strlen($number);
         $sum = 0;
 
         for ($i = $length - 1; $i >= 0; $i -= 2) {
-            $sum += $number[$i];
+            $sum += (int) $number[$i];
         }
 
         for ($i = $length - 2; $i >= 0; $i -= 2) {
@@ -39,7 +34,7 @@ class Luhn
      *
      * @return string
      */
-    public static function computeCheckDigit($partialNumber)
+    public static function computeCheckDigit(string $partialNumber): string
     {
         $checkDigit = self::checksum($partialNumber . '0');
 
@@ -57,7 +52,7 @@ class Luhn
      *
      * @return bool
      */
-    public static function isValid($number)
+    public static function isValid(string $number): bool
     {
         return self::checksum($number) === 0;
     }
@@ -69,7 +64,7 @@ class Luhn
      *
      * @return string
      */
-    public static function generateLuhnNumber($partialValue)
+    public static function generateLuhnNumber(string $partialValue): string
     {
         if (!preg_match('/^\d+$/', $partialValue)) {
             throw new \InvalidArgumentException('Argument should be an integer.');
