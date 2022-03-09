@@ -4,16 +4,20 @@ declare(strict_types=1);
 
 namespace Faker\Core;
 
+use Faker\Extension\DateTimeExtension;
+use Faker\Extension\GeneratorAwareExtension;
+use Faker\Extension\GeneratorAwareExtensionTrait;
 use Faker\Extension\Helper;
 use Faker\Extension\VersionExtension;
-use Faker\Provider\DateTime;
 
-final class Version implements VersionExtension
+final class Version implements VersionExtension, GeneratorAwareExtension
 {
+    use GeneratorAwareExtensionTrait;
+
     /**
      * @var string[]
      */
-    private $semverCommonPreReleaseIdentifiers = ['alpha', 'beta', 'rc'];
+    private array $semverCommonPreReleaseIdentifiers = ['alpha', 'beta', 'rc'];
 
     /**
      * Represents v2.0.0 of the semantic versioning: https://semver.org/spec/v2.0.0.html
@@ -55,6 +59,6 @@ final class Version implements VersionExtension
         }
 
         // date syntax
-        return DateTime::date('YmdHis');
+        return $this->generator->ext(DateTimeExtension::class)->date('YmdHis');
     }
 }
