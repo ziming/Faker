@@ -571,7 +571,7 @@ class Generator
      *
      * @return T
      */
-    public function ext(string $id): Extension\Extension
+    public function ext(string $id)
     {
         if (!$this->container->has($id)) {
             throw new Extension\ExtensionNotFound(sprintf(

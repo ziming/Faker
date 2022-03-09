@@ -14,7 +14,6 @@ class Luhn
 {
     private static function checksum(string $number): int
     {
-        $number = (string) $number;
         $length = strlen($number);
         $sum = 0;
 
@@ -23,23 +22,18 @@ class Luhn
         }
 
         for ($i = $length - 2; $i >= 0; $i -= 2) {
-            $sum += array_sum(str_split($number[$i] * 2));
+            $sum += array_sum(str_split((string) ((int) $number[$i] * 2)));
         }
 
         return $sum % 10;
     }
 
-    /**
-     * @param string $partialNumber
-     *
-     * @return string
-     */
     public static function computeCheckDigit(string $partialNumber): string
     {
         $checkDigit = self::checksum($partialNumber . '0');
 
         if ($checkDigit === 0) {
-            return 0;
+            return '0';
         }
 
         return (string) (10 - $checkDigit);
@@ -47,10 +41,6 @@ class Luhn
 
     /**
      * Checks whether a number (partial number + check digit) is Luhn compliant
-     *
-     * @param string $number
-     *
-     * @return bool
      */
     public static function isValid(string $number): bool
     {
@@ -59,10 +49,6 @@ class Luhn
 
     /**
      * Generate a Luhn compliant number.
-     *
-     * @param string $partialValue
-     *
-     * @return string
      */
     public static function generateLuhnNumber(string $partialValue): string
     {

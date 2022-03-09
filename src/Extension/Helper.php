@@ -57,11 +57,9 @@ final class Helper
             }
         }
 
-        $string = self::replaceWildcard($string, '%', static function () {
+        return self::replaceWildcard($string, '%', static function () {
             return mt_rand(1, 9);
         });
-
-        return $string;
     }
 
     /**
@@ -88,7 +86,18 @@ final class Helper
             return mt_rand(0, 1) ? '#' : '?';
         });
 
-        return static::lexify(static::numerify($string));
+        return Helper::lexify(Helper::numerify($string));
+    }
+
+    /**
+     * Converts string to lowercase.
+     * Uses mb_string extension if available.
+     *
+     * @param string $string String that should be converted to lowercase
+     */
+    public static function toLower(string $string): string
+    {
+        return extension_loaded('mbstring') ? mb_strtolower($string, 'UTF-8') : strtolower($string);
     }
 
     private static function replaceWildcard(string $string, string $wildcard, callable $callback): string

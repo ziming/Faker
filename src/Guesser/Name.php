@@ -2,6 +2,7 @@
 
 namespace Faker\Guesser;
 
+use Faker\Extension\Helper;
 use Faker\Generator;
 
 class Name
@@ -14,14 +15,16 @@ class Name
     }
 
     /**
-     * @param string   $name
+     * Guess a generator based on the name of a field.
+     *
+     * @param string   $name Name of the field to guess
      * @param int|null $size Length of field, if known
      *
      * @return callable|null
      */
-    public function guessFormat($name, $size = null)
+    public function guessFormat(string $name, ?int $size = null)
     {
-        $name = Base::toLower($name);
+        $name = Helper::toLower($name);
         $generator = $this->generator;
 
         if (preg_match('/^is[_A-Z]/', $name)) {
@@ -128,9 +131,7 @@ class Name
                             return $generator->country;
                         };
                 }
-
-                break;
-
+                // no break
             case 'locale':
                 return static function () use ($generator) {
                     return $generator->locale;

@@ -1,21 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Parameter \\#1 \\$input of function str_pad expects string, int given\\.$#"
-			count: 1
-			path: src/Calculator/Iban.php
-
-		-
-			message: "#^Binary operation \"\\*\" between string and 2 results in an error\\.$#"
-			count: 1
-			path: src/Calculator/Luhn.php
-
-		-
-			message: "#^Method Faker\\\\Calculator\\\\Luhn\\:\\:computeCheckDigit\\(\\) should return string but returns int\\.$#"
-			count: 1
-			path: src/Calculator/Luhn.php
-
-		-
 			message: "#^Result of && is always false\\.$#"
 			count: 1
 			path: src/Container/ContainerBuilder.php
