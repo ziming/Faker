@@ -4,7 +4,7 @@ namespace Faker\Provider\en_SG;
 
 use Faker\Provider\DateTime;
 
-class Person extends \Faker\Provider\Person
+class Person extends \Faker\Provider\ms_MY\Person
 {
     /**
      * National Registration Identity Card number
