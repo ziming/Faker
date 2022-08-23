@@ -10,6 +10,11 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
+    public function firstNameMaleMalay()
+    {
+        self::assertContains(Person::firstNameMaleMalay(), ['Faisal']);
+    }
+    
     public function testNric(): void
     {
         self::assertValidSingaporeId($this->faker->nric());
