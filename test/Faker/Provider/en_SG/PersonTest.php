@@ -12,12 +12,92 @@ final class PersonTest extends TestCase
 {
     public function testFirstNameMaleMalay()
     {
-        self::assertContains(Person::firstNameMaleMalay(), ['Faisal']);
+        self::assertContains(Person::firstNameMaleMalay(), ['Ahmad']);
     }
 
     public function testFirstNameFemaleMalay()
     {
-        self::assertContains(Person::firstNameFemaleMalay(), ['Nuraliah']);
+        self::assertContains(Person::firstNameFemaleMalay(), ['Adibah']);
+    }
+
+    public function testLastNameMalay()
+    {
+        self::assertContains(Person::lastNameMalay(), ['Abdullah']);
+    }
+
+    public static function testMuhammadName()
+    {
+        self::assertContains(Person::muhammadName(), ['Muhammad']);
+    }
+
+    public static function testNurName()
+    {
+        self::assertContains(Person::nurName(), ['Nur']);
+    }
+
+    public static function testHaji()
+    {
+        self::assertContains(Person::haji(), ['Haji']);
+    }
+
+    public static function testHajjah()
+    {
+        self::assertContains(Person::hajjah(), ['Hajjah']);
+    }
+
+    public static function testTitleMaleMalay()
+    {
+        self::assertContains(Person::titleMaleMalay(), ['Syed']);
+    }
+
+    public static function testLastNameChinese()
+    {
+        self::assertContains(Person::lastNameChinese(), ['Lim']);
+    }
+
+    public static function testFirstNameMaleChinese()
+    {
+        self::assertContains(Person::firstNameMaleChinese(), ['Goh Tong']);
+    }
+
+    public static function testFirstNameFemaleChinese()
+    {
+        self::assertContains(Person::firstNameFemaleChinese(), ['Mew Choo']);
+    }
+
+    public static function testFirstNameMaleChristian()
+    {
+        self::assertContains(Person::firstNameMaleChristian(), ['Aaron']);
+    }
+
+    public static function testFirstNameFemaleChristian()
+    {
+        self::assertContains(Person::firstNameFemaleChristian(), ['Alice']);
+    }
+
+    public static function testInitialIndian()
+    {
+        self::assertContains(Person::initialIndian(), ['S. ']);
+    }
+
+    public static function testFirstNameMaleIndian()
+    {
+        self::assertContains(Person::firstNameMaleIndian(), ['Arumugam']);
+    }
+
+    public static function testFirstNameFemaleIndian()
+    {
+        self::assertContains(Person::firstNameFemaleIndian(), ['Ambiga']);
+    }
+
+    public static function testLastNameIndian()
+    {
+        self::assertContains(Person::lastNameIndian(), ['Subramaniam']);
+    }
+
+    public function testLastName()
+    {
+        self::assertContains(Person::lastName(), ['Lee']);
     }
     
     public function testNric(): void
