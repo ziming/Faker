@@ -27,27 +27,27 @@ final class PersonTest extends TestCase
 
     public static function testMuhammadName()
     {
-        self::assertNotEmpty(Person::muhammadName());
+        self::assertIsString(Person::muhammadName());
     }
 
     public static function testNurName()
     {
-        self::assertNotEmpty(Person::nurName());
+        self::assertIsString(Person::nurName());
     }
 
     public static function testHaji()
     {
-        self::assertNotEmpty(Person::haji());
+        self::assertIsString(Person::haji());
     }
 
     public static function testHajjah()
     {
-        self::assertNotEmpty(Person::hajjah());
+        self::assertIsString(Person::hajjah());
     }
 
     public static function testTitleMaleMalay()
     {
-        self::assertNotEmpty(Person::titleMaleMalay());
+        self::assertIsString(Person::titleMaleMalay());
     }
 
     public static function testLastNameChinese()
