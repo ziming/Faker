@@ -97,7 +97,7 @@ final class PersonTest extends TestCase
 
     public function testLastName()
     {
-        self::assertNotEmpty(Person::lastName());
+        self::assertNotEmpty($this->faker->lastName());
     }
     
     public function testNric(): void
