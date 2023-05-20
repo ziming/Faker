@@ -52,4 +52,19 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '(+62) 8## #### ####',
         '(+62) 9## #### ####',
     ];
+
+    protected static $mobileNumberFormats = [
+        '08## ### ###',   // 0811 XXX XXX, 10 digits, very old
+        '08## #### ###',  // 0811 XXXX XXX, 11 digits
+        '08## #### ####', // 0811 XXXX XXXX, 12 digits
+    ];
+
+    public function mobileNumber()
+    {
+        $format = static::randomElement(static::$mobileNumberFormats);
+
+        return static::numerify($this->generator->parse($format));
+    }
+
+
 }
