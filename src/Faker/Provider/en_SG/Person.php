@@ -572,7 +572,7 @@ class Person extends \Faker\Provider\Person
      *
      * @return string
      */
-    public function lastNameMalay()
+    public static function lastNameMalay()
     {
         return static::randomElement(static::$lastNameMalay);
     }
