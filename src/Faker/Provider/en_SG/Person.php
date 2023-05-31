@@ -166,7 +166,7 @@ class Person extends \Faker\Provider\Person
      * @see https://en.wikipedia.org/wiki/Muhammad_(name)
      */
     protected static $muhammadName = ['', '', '', '', 'Mohamad ', 'Mohamed ', 'Mohammad ', 'Mohammed ', 'Muhamad ', 'Muhamed ', 'Muhammad ', 'Muhammed ', 'Muhammet ', 'Mohd '];
-    
+
     /**
      * @see https://en.wikipedia.org/wiki/Noor_(name)
      */
@@ -763,7 +763,7 @@ class Person extends \Faker\Provider\Person
 
         return $this->generator->parse(static::randomElement($formats));
     }
-    
+
     /**
      * National Registration Identity Card number
      *

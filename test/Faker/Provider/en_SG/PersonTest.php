@@ -99,7 +99,7 @@ final class PersonTest extends TestCase
     {
         self::assertNotEmpty($this->faker->lastName());
     }
-    
+
     public function testNric(): void
     {
         self::assertValidSingaporeId($this->faker->nric());
